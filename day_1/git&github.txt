@@ -23,6 +23,48 @@ Git states:
 
 	change ----> Modified (changed files) ----> staged (git marked files for next snapshot) -----> committed (snapshot taken)
 
+origin : remote server
+master / main : branches
+
+
+
+
+
+
+
 
 Practical : 
 
+git init
+	--> initialize the git 
+git status 
+	--> shows changed and status of repo  (Modified or staged or committed)
+git log 
+	--> changes in code
+
+
+
+1. git clone url_of_Repo
+
+2. git add .   or git add file.txt
+
+	3. git restore --staged file.txt   ( to restore the change in staged state )
+
+	4. git restore file.txt            (to clear the changes in file)
+
+5. git commit -m "message "
+
+6. git push origin master
+
+
+
+git branching : 
+
+new branch :   		>  git branch develop
+switch to branch :      >  git checkout develop
+
+
+
+go to master branch : (To merge )
+
+>  git merge develop
