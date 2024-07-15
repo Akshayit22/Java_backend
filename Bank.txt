@@ -1,0 +1,10 @@
+Bank Application:
+
+There are two types of Account, Savings Account and Current Account. 
+There is an interest rate for savings account, there is a minimum balance requirement in case of Current Account. 
+For calculating interest - Just add 50 to the existing amount.  
+
+Display Account details in case of Savings Account should show the interest rate along with the account details such as name, accountNumber and balance.  Display Account details in case of Current Account should show the interest rate along with the account details such as name, accountNumber and balance.
+
+We should be able to deposit amount, Withdraw amount and get the balance.
+An action such as deposit and withdrawal are considered as Transaction. The Transaction history should be maintained for each Account. We should be able to print the Transaction history, The date of the transaction, the type of the transaction, the amount involved in the transaction can be printed.

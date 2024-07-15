@@ -1,0 +1,56 @@
+Java Fundamentals  :
+
+	java is high level, object Oriented Programming lang. by james gosling in 1995
+	used in server, apps, games, databases, jsp, JDBC.
+
+	.java file ------> javac sample.java  ---------> java sample
+	(extension)     (to compile bytecode)   (to execute class file)
+
+	compiler --> bytecode --> can be executed on any machine  (platform independent)
+
+	portable, robust, secure, concurrent, Multithreaded, Archthictural neutral
+
+	JDK contains JRE ->
+		JRE contains JDK -> 
+			JDK with tools, compiler and libraries.
+	
+Recap :
+basic program, console input by arguments
+
+Variables : local / instance / static
+
+datatype : 
+	primitive    : boolean,char,byte,short,int,long,float,double
+	Non-primitive: string, array
+
+operators : 
+	unary :		 ++x, x++, y--, --y, !a
+	arithmetic :     +, -, *, /, %
+	shift : 	<< (left shift) , >> (rigth shift)
+	logical : 	&& , || , !
+	ternary :       (a<b)?a:b
+	Assignment :	+= , -= , /= , *= , %= 
+
+Control Flow Statements :
+	decision stat : 
+		1. if Statements
+		2. Switch Statements
+	loop :
+		1. for(initilization; condition, increament)
+		2. while(condition)
+		3. do{}while(condition)
+		4. for-each loop
+	Jump Statements : 
+		1. break; (always used in loops)
+		2. continue; (to skip that iteration)
+
+Methode : type, body , datatype 
+Constructor : default and parameterized, Constructor chaining	
+
+
+Object Oriented Programming :
+	object , class 
+	inheritance - 
+	polymorphism
+	Abstraction
+	Encapsulation
