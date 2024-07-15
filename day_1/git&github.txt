@@ -1,0 +1,28 @@
+Git :   
+	distributed version control or source control tool
+	mostly used 
+	by Linux community
+
+	why : We need it
+
+	how it works : git store snapshot of codes 
+
+source control : 
+	like the surveillance system for the source code
+	means you or someone can keep track source code
+
+version control :
+	Record changes in the code
+	tracking the changes in source code
+
+	distributed version control :
+		we can do it in local machine and can connect to remote repository. clone or 
+
+Git states: 
+	change ----> Modified			----> staged 					-----> committed 
+
+	change ----> Modified (changed files) ----> staged (git marked files for next snapshot) -----> committed (snapshot taken)
+
+
+Practical : 
+
