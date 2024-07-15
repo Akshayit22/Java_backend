@@ -68,3 +68,21 @@ switch to branch :      >  git checkout develop
 go to master branch : (To merge )
 
 >  git merge develop
+
+Branching
+Git branch Create branch:
+	$ git branch 
+List Branch:
+	$ git branch --list 
+Delete a Branch:
+	$ git branch -d 
+Delete a remote Branch:
+	$ git push origin -delete 
+Rename Branch:
+	$ git branch -m
+
+
+Git checkout
+Switch between branches in a repository.
+Switch to a particular branch:
+$ git checkout branch
