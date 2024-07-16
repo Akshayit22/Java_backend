@@ -102,8 +102,16 @@ Lambda Expressions: (java SE 8)
 	it helps to iterate, filter and extract data from collection with less coding.
 
 Java Annotations:
+	it is a Tag that represent metadata (of class,interface or methode)
+	give extra info to compiler r JVM
+
+	ex. @Override, @SuppressWarnings, @Deprecated
+
 
 Design Patterns in Java:
+	imp
+
+
 
 Asyc Programming:
 
