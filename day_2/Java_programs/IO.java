@@ -27,6 +27,21 @@ class Input {
 			System.out.print(e);
 		}
 	}
+	void IStream(){
+		try{
+			InputStream in = new FileInputStream("out.txt");
+			int data = in.read();
+			System.out.println("printing data : " + data);
+			while (data != -1) {
+				System.out.print((char) data);
+				data = in.read();
+			}
+			in.close();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }
 
 class Output {
@@ -49,12 +64,23 @@ class Output {
 			System.out.println(e);
 		}
 	}
+
+	void OStream(){
+		try{
+			System.out.println("Nothing");
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
 }
 
 public class IO {
 	public static void main(String[] args) {
 		Output o = new Output();
-
+		o.OStream();
+		
 		Input i = new Input();
+		i.IStream();
 	}
 }

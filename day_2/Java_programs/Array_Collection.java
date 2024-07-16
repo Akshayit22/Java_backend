@@ -1,5 +1,4 @@
 import java.util.*;
-import java.lang.*;
 
 class Array {
 	void PrintArray(int arr[]) {
@@ -76,21 +75,20 @@ public class Array_Collection {
 
 		// Arrays
 
-		int[] arr = new int[5]; // zeros bby default
+		//int[] arr = new int[5]; // zeros bby default
 		int arr1[] = { 1, 2, 3, 4, 5 };
 		String[] arr2 = { "a", "b", "c", "d", "e" };
 
-		int[][] twoD = new int[3][3];
+		//int[][] twoD = new int[3][3];
 
-		int N = arr2.length;
+		//int N = arr2.length;
 		Array obj = new Array();
 
-		/*
-		 * obj.PrintArray(arr1);
-		 * obj.PrintArray(arr2);
-		 * obj.PrintArray(new int[] { 2, 3, 4, 5, 6 });
-		 * obj.PrintArray(obj.ArrayReturn());
-		 */
+		
+		obj.PrintArray(arr1);
+		obj.PrintArray(arr2);
+		obj.PrintArray(new int[] { 2, 3, 4, 5, 6 });
+		obj.PrintArray(obj.ArrayReturn());
 
 		// Collection
 		Collection c = new Collection();

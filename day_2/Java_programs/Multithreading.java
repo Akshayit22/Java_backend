@@ -1,4 +1,3 @@
-import java.util.*;
 
 class A extends Thread {
 	@Override
@@ -30,6 +29,7 @@ class AR implements Runnable {
 			System.out.print(i + " ");
 		}
 		System.out.println("\nClass AR finished.");
+		
 	}
 }
 
@@ -41,6 +41,7 @@ class BR implements Runnable {
 			System.out.print(i + " ");
 		}
 		System.out.println("\nClass BR finished.");
+	
 	}
 }
 
@@ -49,6 +50,10 @@ public class Multithreading {
 
 		A a = new A();
 		B b = new B();
+
+		a.setPriority(1);
+		b.setPriority(10);
+
 		a.start();
 		b.start();
 
