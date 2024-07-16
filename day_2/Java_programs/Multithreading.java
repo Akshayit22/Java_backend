@@ -11,7 +11,7 @@ class A extends Thread {
 	}
 }
 
-class B implements Runnable {
+class B extends Thread {
 	@Override
 	public void run() {
 		System.out.println("Class B start :");
@@ -22,14 +22,43 @@ class B implements Runnable {
 	}
 }
 
+class AR implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("Class AR start :");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("\nClass AR finished.");
+	}
+}
+
+class BR implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("Class BR start :");
+		for (int i = 0; i < 10; i++) {
+			System.out.print(i + " ");
+		}
+		System.out.println("\nClass BR finished.");
+	}
+}
+
 public class Multithreading {
 	public static void main(String[] args) {
 
 		A a = new A();
-		a.start();
-
 		B b = new B();
-		Thread t = new Thread(b);
-		t.start();
+		a.start();
+		b.start();
+
+		AR ar = new AR();
+		Thread ta = new Thread(ar);
+
+		BR br = new BR();
+		Thread tb = new Thread(br);
+
+		ta.start();
+		tb.start();
 	}
 }
