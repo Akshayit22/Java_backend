@@ -54,3 +54,18 @@ Object Oriented Programming :
 	polymorphism
 	Abstraction
 	Encapsulation
+
+Arrays : 
+	collection of similar type of data
+
+Collection : 
+	set,hashmap,stack,queue, linkedlist,ArrayList
+
+Java I/O : fileWritter , fileReader , file , scanner
+
+Stream : sequence of data
+	System.in
+	System.out
+	System.err
+
+Multithreading  : extending thread class or runnable interface 

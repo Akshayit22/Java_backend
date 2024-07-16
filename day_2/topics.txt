@@ -1,0 +1,13 @@
+
+
+3. Arrays and Collections,Java I/O (Input/Output),Multithreading and Concurrency
+
+4. Java Streams and Lambda Expressions,Java Generics,Java Annotations
+
+5. Design Patterns in Java,
+
+6. Collections & Generics,Java Database Connectivity (JDBC),Java Memory Management and Garbage Collection
+
+7. Exception Handling
+
+8. Asyc Programming
