@@ -18,3 +18,12 @@ Java Basics :
 
 
 every day meeting : 2:30 pm
+
+Here's the couple of Java learning websites: 
+https://dev.java/learn/
+https://www.javatpoint.com/java-8-features
+You can check in the official docs for java: https://docs.oracle.com/javase/tutorial/
+ 
+Spring boot:
+https://docs.spring.io/spring-boot/index.html
+projects on Spring boot: https://spring.io/projects/spring-boot
