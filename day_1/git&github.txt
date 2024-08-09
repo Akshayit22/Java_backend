@@ -1,7 +1,7 @@
 Git :   
 	distributed version control or source control tool
-	mostly used 
 	by Linux community
+	mostly used by developers
 
 	why : We need it
 
@@ -12,7 +12,7 @@ source control :
 	means you or someone can keep track source code
 
 version control :
-	Record changes in the code
+	Records changes in the code
 	tracking the changes in source code
 
 	distributed version control :
@@ -24,8 +24,9 @@ Git states:
 	change ----> Modified (changed files) ----> staged (git marked files for next snapshot) -----> committed (snapshot taken)
 
 origin : remote server
-master / main : branches
+master / main / develop : branches
 
+.gitignore: folder/ , *.log ,
 
 
 
@@ -41,10 +42,23 @@ git status
 	--> shows changed and status of repo  (Modified or staged or committed)
 git log 
 	--> changes in code
+git log -1 
+	--> last commit log
+git log -1 --stat
+	--> files and lines changed in last commit
+
+IMP :
+
+git log -1 -p
+	--> actual code changes in each files for last commit
 
 
 
 1. git clone url_of_Repo
+
+1.1. to remove the un-tracked changed
+ git checkout file.txt/.
+
 
 2. git add .   or git add file.txt
 
@@ -52,24 +66,45 @@ git log
 
 	4. git restore file.txt            (to clear the changes in file)
 
-5. git commit -m "message "
+5. git commit -m "message"
 
-6. git push origin master
+6. git add and commit > git commit -am "message"
+
+7. git push origin master/main
+
+8. to remove the un-tracked changed
+	> git checkout file.txt
+
+9. to go back commit from current head (to go two commits back)
+	> git checkout HEAD~2
 
 
 
-git branching : 
+
+git branching / checkout: 
 
 new branch :   		>  git branch develop
-switch to branch :      >  git checkout develop
 
+switch to branch :      
+	>  git checkout develop
+or	>  git switch develop
 
+going to any commit :
+	> git checkout 'hash of Target commit'
+
+creating new branch and switching :
+	> git checkout -b 'test'
+	> git switch -c 'test'
+
+deleting branch: ( from other branch )
+	> git branch -d 'branchToDelete' 
 
 go to master branch : (To merge )
 
 >  git merge develop
 
 Branching
+
 Git branch Create branch:
 	$ git branch 
 List Branch:
@@ -86,3 +121,83 @@ Git checkout
 Switch between branches in a repository.
 Switch to a particular branch:
 $ git checkout branch
+
+to see changes in branch
+	> git diff branchName
+	> git diff --staged
+
+	changes of two commits
+	>git diff HashOfOneCommit HashOfSecCommit
+	>git diff oldHash..NewHash
+
+
+Amend :
+	to change/update previous commits
+
+	> git add .
+	> git commit --amend
+	or
+	> git commit --amend -m "new message for last commit msg"
+
+
+Conflict : (sample file/line in diff branch)
+
+	two branches main and sample have same code
+	 after  main makes one commit change one ile
+	 sample commits by changing sample file 
+
+	while merging we get conflict error
+
+  Fix conflict :
+  		we can reslove conflict by manually changing files 
+
+
+git Stash : (to go to last working commits)
+ 	> git stash 
+ 	> git stash -m "message"
+
+(list saved stashed in disk)
+ 	> git stash --list
+
+ ( to go to stashed saved changes. applies last stashed change.)
+ 	> git stash pop 
+
+ (applies last stashed change. but stash saved in stash list)
+ 	> git stash apply 
+
+ (to delete stash list item)
+ 	> git stash drop stash@{N}   ex:stash@{2}  
+
+ (to clear list ) > git stash clear
+
+ (to stash only one file)
+ 	> git stash -- home.html
+
+ (to see chaneges in stash)
+ 	> git stash show stash@{0}
+
+(to stash only modified changes not stagged files)
+ 	> git stash --keep-index
+
+(to stash untracked files also)
+	> git stash --include-untracked
+
+
+
+Git Restore :
+
+(restore unstaged changes)
+	> git restore file.txt
+	> git restore same as > git restore --worktree
+
+(restore staged changes)
+	> git restore --staged file.txt
+
+(to restore both staged and modified changes. )
+	> git restore --staged --worktree .
+
+(to restore file till last commit)
+	> git restore --source='HashOfCommit' file.txt
+  ex.> git restore --source=2d34303 .
+  (last commit)
+  	> git restore --s=HEAD~1 .
