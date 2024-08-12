@@ -19,15 +19,17 @@ version control :
 		we can do it in local machine and can connect to remote repository. clone or 
 
 Git states: 
-	change ----> Modified			----> staged 					-----> committed 
+	changed ----> Modified			----> staged 					-----> committed 
 
-	change ----> Modified (changed files) ----> staged (git marked files for next snapshot) -----> committed (snapshot taken)
+	changed ----> Modified (changed files) ----> staged (git marked files for next snapshot) -----> committed (snapshot taken)
 
 origin : remote server
 master / main / develop : branches
 
 .gitignore: folder/ , *.log ,
 
+
+git log <branch> --decorate --oneline --graph
 
 
 
@@ -45,7 +47,7 @@ git log
 git log -1 
 	--> last commit log
 git log -1 --stat
-	--> files and lines changed in last commit
+	--> files and No. of lines changed in last commit
 
 IMP :
 
@@ -68,7 +70,8 @@ git log -1 -p
 
 5. git commit -m "message"
 
-6. git add and commit > git commit -am "message"
+6. git add and commit 
+	> git commit -am "message"
 
 7. git push origin master/main
 
@@ -99,9 +102,10 @@ creating new branch and switching :
 deleting branch: ( from other branch )
 	> git branch -d 'branchToDelete' 
 
-go to master branch : (To merge )
+go to master/main branch : (To merge )
 
 >  git merge develop
+
 
 Branching
 
@@ -120,7 +124,7 @@ Rename Branch:
 Git checkout
 Switch between branches in a repository.
 Switch to a particular branch:
-$ git checkout branch
+> $ git checkout branch
 
 to see changes in branch
 	> git diff branchName
@@ -143,8 +147,8 @@ Amend :
 Conflict : (sample file/line in diff branch)
 
 	two branches main and sample have same code
-	 after  main makes one commit change one ile
-	 sample commits by changing sample file 
+	 after  main makes one commit change one lile
+	 sample commits by changing same file 
 
 	while merging we get conflict error
 
@@ -152,28 +156,33 @@ Conflict : (sample file/line in diff branch)
   		we can reslove conflict by manually changing files 
 
 
+GIT STASH :
+
 git Stash : (to go to last working commits)
  	> git stash 
  	> git stash -m "message"
 
 (list saved stashed in disk)
  	> git stash --list
+ 	> git stash show {indx=0}
 
- ( to go to stashed saved changes. applies last stashed change.)
+ ( to go to stashed saved changes. applies last stashed change. and pop from list)
  	> git stash pop 
+ 	> git stash pop --index 1
 
- (applies last stashed change. but stash saved in stash list)
+ (applies last stashed change. but stash saved (Not poped) in stash list)
  	> git stash apply 
 
  (to delete stash list item)
  	> git stash drop stash@{N}   ex:stash@{2}  
 
- (to clear list ) > git stash clear
+ (to clear list ) 
+ 	> git stash clear
 
  (to stash only one file)
  	> git stash -- home.html
 
- (to see chaneges in stash)
+ (to see chaneges in stash) > git stash show
  	> git stash show stash@{0}
 
 (to stash only modified changes not stagged files)
@@ -182,22 +191,107 @@ git Stash : (to go to last working commits)
 (to stash untracked files also)
 	> git stash --include-untracked
 
+(store changes into separate branch)
+	> git stash branch <Branch Name>
+
 
 
 Git Restore :
 
-(restore unstaged changes)
-	> git restore file.txt
-	> git restore same as > git restore --worktree
+	(restore unstaged changes)
+		> git restore file.txt
+		> git restore same as > git restore --worktree
 
-(restore staged changes)
-	> git restore --staged file.txt
+	(restore staged changes)
+		> git restore --staged file.txt
 
-(to restore both staged and modified changes. )
-	> git restore --staged --worktree .
+	(to restore both staged and modified changes. )
+		> git restore --staged --worktree .
 
-(to restore file till last commit)
-	> git restore --source='HashOfCommit' file.txt
-  ex.> git restore --source=2d34303 .
-  (last commit)
-  	> git restore --s=HEAD~1 .
+	(to restore file till last commit)
+		> git restore --source='HashOfCommit' file.txt
+	  ex.> git restore --source=2d34303 .
+	  (last commit)
+	  	> git restore --s=HEAD~1 .
+
+
+Git Reset : 
+	(to change the state of HEAD, changes commit history)
+
+	(to remove file from stagging , changes not discarded) 
+		> git reset {hash of commit}
+
+	(undo last commit and changes are in stagged state)
+		> git reset --soft HEAD~1
+
+	(undo last commit and changes are in unstage/working state)
+		> git reset --mixed HEAD~1
+
+	(discard current changed)
+		> git reset --hard {commit hash}
+
+	(reset last commit)
+	> git reset HEAD~1 
+	> git reset --hard HEAD~1 
+
+
+Git Revert :
+	( to avoid conflic by git reset )
+
+	Git undo commit
+		> git revert 0ec8bab
+
+
+Git Alise : (shortform for commands) 
+	> got to root dir > nano .gitconfig
+
+	add 
+	[alias]
+		st = status
+		one = log --oneline
+		hist = log -1 -p
+		stat = log -1 --stat
+		ch = checkout
+
+	or by command
+		> git config --global alias.ch checkout
+
+Git Rebase : 
+	using merge it will create new merge commit it will afect commit history
+	using rebase can combine branch without useless commits
+	we are changing history
+
+	(to clean the commit history discards merge commits)
+		> git rebase branch
+
+	(from other branch main branch)
+		> git rebase <other branch>
+
+
+Git Cherry-pick : (allows to apply only changed that you want to apply)
+
+	to pick target commit form diff branch and add it to working branch.
+	takes target commit and places over head of working branch
+
+	> git cherry-pick <targetCommitHash>
+	> git cherry-pick <targetCommitHash_1>  <targetCommitHash_2>
+
+(to copy commit from different branch ro main branch)
+	> git cherry-pick FirstCommitHash^..LastCommitHash
+
+
+
+Collaboration :
+	Fork repo in github, clone repo ,
+	change request from other than owner is pull request
+	owner will reveiw changed and can merge the pull request
+
+	PULL : (fetch + merge)
+	fetches changes from remote repo to local repo ( to stay upto date with remote repo )
+		 > git pull
+		 > git pull origin main
+
+		 > git pull -all ( all branched )
+
+		(pull changes from main put into feature branch in locally)
+		 	> git pull origin main:feature 
