@@ -39,6 +39,8 @@ class Programmer extends Emp {
 
 /* Abstraction */
 abstract class Animal {
+	static int max_age = 200;
+
 	abstract void move();
 
 	abstract void eat();
@@ -54,7 +56,7 @@ class Bird extends Animal {
 	}
 
 	void eat() {
-		System.out.println("Eats bird");
+		System.out.println("Eats bird Food");
 	}
 }
 
@@ -70,13 +72,23 @@ class Fish extends Animal {
 
 /* Interface Abstraction */
 interface AnimalI {
+	int max_age = 200;//it is by default public static final
+
 	public void eat();
 
 	public void sound();
+
+	public static void method(){
+		System.out.println("Method with body called from interface.");
+	}
+
+	default void sleep(){
+		System.out.println("All animal sleeps..");
+	}
 }
 
 interface BirdI {
-	int numberOfLegs = 2;
+	int numberOfLegs = 2;//it is by default public static final
 	String eat = "birdfood";
 
 	public void fly();

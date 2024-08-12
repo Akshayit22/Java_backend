@@ -36,7 +36,7 @@ Control Flow Statements :
 		1. if Statements
 		2. Switch Statements
 	loop :
-		1. for(initilization; condition, increament)
+		1. for(initilization; condition; increament)
 		2. while(condition)
 		3. do{}while(condition)
 		4. for-each loop
@@ -50,10 +50,18 @@ Constructor : default and parameterized, Constructor chaining
 
 Object Oriented Programming :
 	object , class 
-	inheritance - 
-	polymorphism
-	Abstraction
-	Encapsulation
+	inheritance - extend
+	polymorphism  - many form override/overloading
+	Abstraction   - hiding implmentation details
+	Encapsulation - data binding + hiding
+
+interfaces : contains 
+	1. abstract methods + static with body
+	2. static constant variables
+	3. default methods (auto inherite by all childs)
+(means methods are by default: public abstract) and (
+variables are by default: public static final )
+
 
 Arrays : 
 	collection of similar type of data
@@ -79,7 +87,7 @@ Java Memory Management and Garbage Collection:
 	Garbage collector (which finds and deletes unreachable object at runtime)
 
 	objects live in Heap Memory
-	unreferenced objects : 1. pointing to null
+	unreferenced objects :  1. pointing to null
 							2. assigned reference to another object. obj1 = obj2 ,(obj1 avail fro Garbage Collection)
 							3. anonymous object ,--> new Person();
 	finalize() -> cleanup , gc() --> invoke Garbage collector
@@ -90,12 +98,12 @@ Exception Handling :
 Java Streams : 
 	InputStrams , outputStreams
 	
-	Stream<String> filtered = l.stream().filter(s-> s == "akshay" || s == "amar");
+	Stream<String> filtered = list.stream().filter(s-> s == "akshay" || s == "amar");
     filtered.forEach(s -> System.out.println(s));
 
 Java Generics:
 	user-defined types
-	adv. 1.Type-safty 2.Type-casting not required 3.compile-yime checking
+	adv. 1.Type-safty 2.Type-casting not required 3.compile-time checking
 	List<String> l = new ArrayList<String>();
 
 Lambda Expressions: (java SE 8)
@@ -114,5 +122,7 @@ Design Patterns in Java:
 
 
 Asyc Programming:
+	By compatableFuture CompleteFuture
 
-Java Database Connectivity (JDBC)
+Java Database Connectivity (JDBC) :
+	driver connection

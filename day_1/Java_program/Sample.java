@@ -10,7 +10,7 @@ public class Sample {
 	};
 
 	Sample() {
-		System.out.println("Sample class Constructor called.");
+		System.out.println("Sample/main class Constructor called.");
 	}
 
 	static { // static block

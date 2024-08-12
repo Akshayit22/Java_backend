@@ -1,0 +1,12 @@
+/* -------------- Java Recap ------------*/
+string :
+
+String A = "ram";
+String B = "ram";
+
+	if(A==B) ---> True		// same memory loc. for A & B
+
+String A = new String("ram");  // new obj in heap mem 
+String B = new String("ram");
+	
+	if(A==B) ---> false
