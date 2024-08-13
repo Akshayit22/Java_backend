@@ -10,3 +10,6 @@ String A = new String("ram");  // new obj in heap mem
 String B = new String("ram");
 	
 	if(A==B) ---> false
+
+Lambda Function :
+	anonymous Function (without name)

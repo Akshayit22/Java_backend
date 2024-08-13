@@ -3,7 +3,6 @@
  * E - Element
  * K - key
  * V - Value
- * V - Value
  */
 class MyGen<T>{
     T obj;

@@ -9,7 +9,7 @@ public class Async{
         catch(Exception e){
             e.printStackTrace();
         }
-        return "data comming (2 sec delay) from "+From;
+        return "data comming (3 sec delay) from "+From;
 
     }
     public static void main(String[] args) {
