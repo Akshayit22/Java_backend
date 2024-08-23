@@ -23,7 +23,7 @@ public class Async{
         CompletableFuture<String> d3 = CompletableFuture.supplyAsync(()->fetchData("Wifi"));
         CompletableFuture<String> d4 = CompletableFuture.supplyAsync(()->fetchData("Dongal"));
 
-        CompletableFuture<Void> RunAtSameTime = CompletableFuture.allOf(d1, d2,d3,d4);
+        CompletableFuture<Void> RunAtSameTime = CompletableFuture.allOf(d1,d2,d3,d4);
 
         RunAtSameTime.thenRun(()->{
             try{
